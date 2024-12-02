@@ -4,7 +4,7 @@
 void sumofMatrices(double *z,double *x,double *y,int nrows,int ncols){
   for(int ii=0;ii<nrows;ii++){
     for(int jj=0;jj<ncols;jj++){
-        *((z+ii*ncols) + jj) = *((x+ii*ncols) + jj) + *((y+ii*ncols) + jj) ; // need to study this more
+        *((z+ii*ncols) + jj) = *((x+ii*ncols) + jj) + *((y+ii*ncols) + jj) ; // Nice Nice!!!!
     }
   }
 }
