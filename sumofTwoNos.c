@@ -1,22 +1,20 @@
 #include "mex.h"
 
+// Function where operation happens
 void sumofTwoNos(double z[],double x[],double y[]){
   z[0] = x[0]+ y[0];
 }
 
+// Main function
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]){
   double *x,*y,*z;
-  int mrows, ncols;
 
-  mrows = mxGetM(prhs[0]);
-  ncols = mxGetN(prhs[0]);
+  plhs[0] = mxCreateDoubleMatrix(1,1, mxREAL); // iniitializing pointer to output
 
-  plhs[0] = mxCreateDoubleMatrix(mrows,ncols, mxREAL);
+  x = mxGetPr(prhs[0]); // pointer to first number
+  y = mxGetPr(prhs[1]); // pointer to second number
 
-  x = mxGetPr(prhs[0]);
-  y = mxGetPr(prhs[1]);
-
-  z = mxGetPr(plhs[0]);
+  z = mxGetPr(plhs[0]); // pointer to output
 
   sumofTwoNos(z,x,y);
 }
